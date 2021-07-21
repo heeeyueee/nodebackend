@@ -2,7 +2,7 @@ const Record = require('../models/record.model.js');
 
 // Create and Save a new Note
 exports.create = (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)
     // Validate request
     if (!req.body) {
         return res.status(400).send({
@@ -18,6 +18,7 @@ exports.create = (req, res) => {
         category: req.body.category,
         amount: req.body.amount,
         createdAt: req.body.createdAt,
+        userId: req.body.userId
     });
 
     // Save Note in the database
@@ -34,7 +35,8 @@ exports.create = (req, res) => {
 
 // Retrieve and return all notes from the database.
 exports.findAll = (req, res) => {
-    Record.find()
+    console.log(req.query.userId)
+    Record.find({ userId: req.query.userId })
         .then(records => {
             res.send(records);
         }).catch(err => {

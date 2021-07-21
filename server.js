@@ -36,6 +36,8 @@ app.get('/', (req, res) => {
 // Require Notes routes
 require('./app/routes/record.routes.js')(app);
 require('./app/routes/tag.routes.js')(app);
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 
 // listen for requests
 app.listen(9000, () => {

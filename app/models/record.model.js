@@ -5,7 +5,8 @@ const RecordSchema = mongoose.Schema({
     note: String,
     category: String,
     amount: Number,
-    createdAt: String
+    createdAt: String,
+    userId: String
 }, {
     timestamps: true
 });

@@ -3,7 +3,7 @@ const Tag = require('../models/tag.model.js');
 
 // Create and Save a new Note
 exports.create = (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)
     // Validate request
     if (!req.body) {
         return res.status(400).send({
